@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+
+    <item android:title="Chat">
+
+        <menu>
+
+                <item
+                    android:id="@+id/nav_StartMatching"
+                    android:title="Start matching"/>
+
+                <item
+                    android:id="@+id/nav_chats"
+                    android:title="Saved Messages"/>
+
+
+
+                <item
+                    android:id="@+id/Users"
+                    android:title="Users"/>
+
+        </menu>
+
+    </item>
+
+
+    <item android:title="Profile">
+
+        <menu>
+
+            <item
+                android:id="@+id/Accsettings"
+                android:title="Account Settings"/>
+
+            <item
+                android:id="@+id/LogOut"
+                android:title="Log Out"/>
+        </menu>
+
+    </item>
+</menu>
