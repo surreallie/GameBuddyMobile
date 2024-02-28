@@ -4,27 +4,6 @@
     tools:showIn="navigation_view">
 
 
-    <item android:title="Chat">
-
-        <menu>
-
-                <item
-                    android:id="@+id/nav_StartMatching"
-                    android:title="Start matching"/>
-
-                <item
-                    android:id="@+id/nav_chats"
-                    android:title="Saved Messages"/>
-
-
-
-                <item
-                    android:id="@+id/Users"
-                    android:title="Users"/>
-
-        </menu>
-
-    </item>
 
 
     <item android:title="Profile">

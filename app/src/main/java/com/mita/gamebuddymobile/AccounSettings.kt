@@ -38,20 +38,6 @@ class AccounSettings : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
-                R.id.nav_StartMatching -> {
-                    showStartMatchingDialog()
-                    true
-                }
-                R.id.nav_chats -> {
-                    val intent = Intent(this, SavedMessages::class.java)
-                    startActivity(intent)
-                    true
-                }
-                R.id.Users -> {
-                    val intent = Intent(this, Users::class.java)
-                    startActivity(intent)
-                    true
-                }
                 R.id.Accsettings -> {
                     true
                 }

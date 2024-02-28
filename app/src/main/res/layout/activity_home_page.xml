@@ -17,58 +17,61 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/pink"
-            app:titleTextColor="@color/white"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:titleTextColor="@color/white" />
+
+        <Button
+            android:id="@+id/btn_StartMatching"
+            android:layout_width="301dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:textAllCaps="false"
+            android:textSize="21sp"
+            android:text="Start Matching"
+            android:textColor="@color/white"
+            android:background="@drawable/signupbuttonbackgroundcolor"
+            app:layout_constraintBottom_toTopOf="@id/tabLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar"
+            app:layout_constraintVertical_bias="0.079" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="410dp"
+            android:layout_height="37dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintBottom_toTopOf="@id/ViewPager2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_StartMatching"
+            app:layout_constraintVertical_bias="0.0">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Users" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saved Messages" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/ViewPager2"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"/>
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Start to see messages"
-            android:textColor="@color/underline"
-            android:textSize="26sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5" />
-
-        <EditText
-            android:id="@+id/email"
-            android:layout_width="330dp"
-            android:layout_height="44dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Type Messages here..."
-            android:inputType="textEmailAddress"
-            android:padding="15dp"
-            android:textSize="14sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.253"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.976" />
-
-        <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="35dp"
-            android:background="@drawable/baseline_send_24"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.956"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.964" />
+            app:layout_constraintTop_toBottomOf="@id/tabLayout" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
@@ -79,7 +82,4 @@
         android:layout_gravity="start"
         android:fitsSystemWindows="true"/>
 
-        
-    
-        
 </androidx.drawerlayout.widget.DrawerLayout>
