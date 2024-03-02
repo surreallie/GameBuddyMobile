@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme.NavigationView" parent="Widget.Design.NavigationView">
+        <item name="android:background">@drawable/rounded_background</item>
+    </style>
     <string name="underlined_text"><font color="#C850C0">LogIn</font></string>
     <string name="SignUpUnderlined"><font color="#C850C0">Create new</font></string>
     <string name="ForgotPassUnderlined"><u><font color="#3399FF">Forgot your password?</font></u></string>
 </resources>
+
