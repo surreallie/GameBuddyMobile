@@ -24,22 +24,12 @@ class HomePage : AppCompatActivity() {
     private lateinit var toggle: ActionBarDrawerToggle
     private lateinit var binding: ActivityHomePageBinding
     private lateinit var adapter: PageAdapter
-    private lateinit var startmatching:Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityHomePageBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val startmatching: Button = findViewById(R.id.btn_StartMatching)
-
-        startmatching.setOnClickListener {
-
-            Toast.makeText(this, "Confirm", Toast.LENGTH_LONG)
-            showStartMatchingDialog()
-            true
-
-        }
 
 
         adapter = PageAdapter(supportFragmentManager, lifecycle)
@@ -81,6 +71,14 @@ class HomePage : AppCompatActivity() {
 
         navView.setNavigationItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
+                R.id.HomePageRedirect -> {
+                    true
+                }
+                R.id.Lobby -> {
+                    val intent = Intent(this, Lobby::class.java)
+                    startActivity(intent)
+                    true
+                }
                 R.id.Accsettings -> {
                     val intent = Intent(this, AccounSettings::class.java)
                     startActivity(intent)
@@ -107,30 +105,6 @@ class HomePage : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun showStartMatchingDialog() {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.start_matching_dialog) // Moved this line up
-
-        val btnStartMatching: Button = dialog.findViewById(R.id.confirmdialog)
-        val btnCancel: Button = dialog.findViewById(R.id.canceldialog)
-
-        // Set dialog properties
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window?.setLayout(GridLayout.LayoutParams.MATCH_PARENT, GridLayout.LayoutParams.WRAP_CONTENT)
-        dialog.window?.setGravity(Gravity.CENTER)
-
-        // Show the dialog
-        btnStartMatching.setOnClickListener {
-            Toast.makeText(this, "Confirm", Toast.LENGTH_LONG).show() // You forgot to call show()
-            dialog.dismiss()
-        }
-
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.show()
-    }
 }
 
 

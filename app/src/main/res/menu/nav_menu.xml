@@ -3,6 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
+    <item
+        android:id="@+id/HomePageRedirect"
+        android:title="GameBuddy">
+    </item>
+    <item android:title="Group">
+
+        <menu>
+            <item
+                android:id="@+id/Lobby"
+                android:title="Lobby"/>
+
+        </menu>
+
+    </item>
 
 
 

@@ -1,28 +1,19 @@
 package com.mita.gamebuddymobile
 
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
-import android.os.Bundle
-import android.view.Gravity
-import android.view.MenuItem
-import android.widget.Button
-import android.widget.GridLayout
-import android.widget.Toast
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.view.MenuItem
+import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 
-class AccounSettings : AppCompatActivity() {
-
+class Lobby : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_accoun_settings)
+        setContentView(R.layout.activity_lobby)
 
         val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
         val navView: NavigationView = findViewById(R.id.nav_view)
@@ -44,11 +35,11 @@ class AccounSettings : AppCompatActivity() {
                     true
                 }
                 R.id.Lobby -> {
-                    val intent = Intent(this, Lobby::class.java)
-                    startActivity(intent)
                     true
                 }
                 R.id.Accsettings -> {
+                    val intent = Intent(this, AccounSettings::class.java)
+                    startActivity(intent)
                     true
                 }
                 R.id.LogOut -> {
@@ -68,30 +59,4 @@ class AccounSettings : AppCompatActivity() {
         }
         return super.onOptionsItemSelected(item)
     }
-
-    private fun showStartMatchingDialog() {
-        val dialog = Dialog(this)
-        dialog.setContentView(R.layout.start_matching_dialog) // Moved this line up
-
-        val btnStartMatching: Button = dialog.findViewById(R.id.confirmdialog)
-        val btnCancel: Button = dialog.findViewById(R.id.canceldialog)
-
-        // Set dialog properties
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.window?.setLayout(GridLayout.LayoutParams.MATCH_PARENT, GridLayout.LayoutParams.WRAP_CONTENT)
-        dialog.window?.setGravity(Gravity.CENTER)
-
-        // Show the dialog
-        btnStartMatching.setOnClickListener {
-            Toast.makeText(this, "Confirm", Toast.LENGTH_LONG).show() // You forgot to call show()
-            dialog.dismiss()
-        }
-
-        btnCancel.setOnClickListener {
-            dialog.dismiss()
-        }
-
-        dialog.show()
-    }
 }
-
